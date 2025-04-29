@@ -1,23 +1,27 @@
-# React Project for the React Course
+#Zzzap
+Простое приложение для управления задачами, созданное с использованием React и TypeScript.
 
-## Available Scripts
+## Демо
 
-In the project directory, you can run:
+Посмотреть приложение можно здесь: [https://your-todo-app.vercel.app](https://your-todo-app.vercel.app)
 
-### `npm start`
+### Функционал
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Добавление, удаление и завершение задач
+- Фильтрация задач (все, активные, завершенные)
+- Сохранение задач в Local Storage
+- Адаптивный дизайн с Tailwind CSS
+- Управление состоянием с помощью Zustand
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Стек
 
-### `npm test`
+- React
+- TypeScript
+- Tailwind CSS
+- Zustand
+- Local Storage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+### `pnpm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,7 +31,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `pnpm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
