@@ -1,0 +1,12 @@
+.todoListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Отступ между задачами */
+}
+
+.todoListContainer h2 {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin: 20px 0;
+}

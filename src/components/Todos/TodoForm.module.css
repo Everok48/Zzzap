@@ -1,5 +1,9 @@
 .todoFormContainer {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  background-color: var(--card-background);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
 .todoForm {
@@ -10,23 +14,74 @@
 
 .inputWrapper {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  align-items: center;
 }
 
 .input {
   flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
   font-size: 16px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
 .inputError {
-  border-color: #ff0000; /* Красная рамка при ошибке */
+  border-color: var(--danger-color);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
 }
 
 .errorMessage {
-  color: #ff0000;
+  color: var(--danger-color);
   font-size: 14px;
   margin-top: 5px;
+  font-weight: 500;
+}
+
+.priorityWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prioritySelect {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prioritySelect:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+  .todoFormContainer {
+    padding: 10px;
+  }
+
+  .inputWrapper {
+    flex-direction: column;
+  }
+
+  .input,
+  .prioritySelect {
+    width: 100%;
+    font-size: 14px;
+  }
 }

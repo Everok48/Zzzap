@@ -2,15 +2,103 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  position: relative;
+  background-color: var(--card-background);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.todo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.completedTodo {
+  background-color: #e0ffe0;
+  text-decoration: line-through;
+  color: #888;
+}
+
+[data-theme='dark'] .completedTodo {
+  background-color: #2a4b2a;
+  color: #aaa;
+}
+
+.priority-low {
+  border-left: 4px solid #28a745;
+}
+
+.priority-medium {
+  border-left: 4px solid #ffc107;
+}
+
+.priority-high {
+  border-left: 4px solid #dc3545;
+}
+
+.todoIcon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.todoText {
+  flex: 1;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.createdAt {
+  display: block;
+  font-size: 12px;
+  color: var(--secondary-color);
+  margin-top: 4px;
+}
+
+.deleteIcon {
+  font-size: 1.2rem;
+  color: var(--danger-color);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.deleteIcon:hover {
+  transform: scale(1.2);
+}
+
+.checkIcon {
+  font-size: 1.2rem;
+  color: var(--success-color);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.checkIcon:hover {
+  transform: scale(1.2);
+}
+
+.editForm {
+  flex: 1;
+}
+
+.editInput {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--card-background);
+  color: var(--text-color);
 }
 
 @media (max-width: 600px) {
   .todo {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px;
   }
 
   .todoIcon,
@@ -20,6 +108,14 @@
   }
 
   .todoText {
+    font-size: 0.9rem;
+  }
+
+  .createdAt {
+    font-size: 10px;
+  }
+
+  .editInput {
     font-size: 0.9rem;
   }
 }

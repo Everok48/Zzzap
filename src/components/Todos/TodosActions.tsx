@@ -2,7 +2,6 @@ import Button from '../UI/Button'
 import { RiDeleteBin2Line, RiRefreshLine } from 'react-icons/ri'
 import styles from './TodosActions.module.css'
 
-// Определяем типы для пропсов
 interface TodosActionsProps {
   resetTodos: () => void
   deleteCompletedTodos: () => void
