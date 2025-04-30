@@ -1,13 +1,19 @@
 .button {
-  margin-left: 20px;
-  height: 50px;
-  cursor: pointer;
-  background-color: beige;
-  font-size: 1.5rem;
-  padding: 10px 15px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
 }
+
 .button:hover {
-  background-color: rgb(240, 240, 155);
+  background-color: #0056b3;
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }

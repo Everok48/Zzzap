@@ -1,39 +1,38 @@
-import { useState, FormEvent, ChangeEvent } from 'react'
-import styles from './TodoForm.module.css'
-import Button from '../UI/Button'
+// Todo.tsx
+import styles from './Todo.module.css'
+import { RiTodoFill, RiDeleteBin2Line } from 'react-icons/ri'
+import { FaCheck } from 'react-icons/fa'
+import { Todo } from '../../types'
 
-// Определяем типы для пропсов
-interface TodoFormProps {
-  addTodo: (text: string) => void
+interface TodoProps {
+  todo: Todo
+  deleteTodo: (id: string) => void
+  toggleTodo: (id: string) => void
 }
 
-// Типизируем компонент
-const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
-  const [text, setText] = useState<string>('')
-
-  // Типизируем событие для формы
-  const addTodoSubmitHundler = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    addTodo(text)
-    setText('')
-  }
-
+const TodoItem: React.FC<TodoProps> = ({ todo, deleteTodo, toggleTodo }) => {
   return (
-    <div className={styles.todoFormContainer}>
-      <form onSubmit={addTodoSubmitHundler}>
-        <input
-          value={text}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setText(e.target.value)
-          }
-          placeholder="Добавить задачу"
-        />
-        <Button type="submit" title="Подтвердить добавление задачи">
-          Подтвердить
-        </Button>
-      </form>
+    <div
+      className={`${styles.todo} ${
+        todo.isCompleted ? styles.completedTodo : ''
+      }`}
+    >
+      <RiTodoFill className={styles.todoIcon} />
+      <div className={styles.todoText}>{todo.text}</div>
+      <RiDeleteBin2Line
+        className={styles.deleteIcon}
+        onClick={(e: React.MouseEvent<SVGElement>) => {
+          deleteTodo(todo.id)
+        }}
+      />
+      <FaCheck
+        className={styles.checkIcon}
+        onClick={(e: React.MouseEvent<SVGElement>) => {
+          toggleTodo(todo.id)
+        }}
+      />
     </div>
   )
 }
 
-export default TodoForm
+export default TodoItem

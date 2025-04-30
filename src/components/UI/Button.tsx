@@ -1,24 +1,16 @@
-import styles from './Button.module.css'
+import { ButtonHTMLAttributes } from 'react';
+import styles from './Button.module.css';
 
-// Определяем типы для пропсов
-interface ButtonProps {
-  children: React.ReactNode
-  disabled?: boolean
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-  title?: string
-  [key: string]: any
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  title: string;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  disabled = false,
-  ...rest
-}) => {
+const Button: React.FC<ButtonProps> = ({ children, title, ...rest }) => {
   return (
-    <button {...rest} className={styles.button} disabled={disabled}>
+    <button className={styles.button} title={title} {...rest}>
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

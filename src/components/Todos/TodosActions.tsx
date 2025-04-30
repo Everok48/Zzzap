@@ -9,7 +9,6 @@ interface TodosActionsProps {
   completedTodosExist: boolean
 }
 
-// Типизируем компонент
 const TodosActions: React.FC<TodosActionsProps> = ({
   resetTodos,
   deleteCompletedTodos,

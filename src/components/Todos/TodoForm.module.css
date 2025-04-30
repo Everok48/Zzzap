@@ -1,17 +1,32 @@
 .todoFormContainer {
-  margin-bottom: 30px;
-}
-.todoFormContainer form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.todoFormContainer input {
-  width: 45%;
-  height: 30px;
-  font-size: 1.3rem;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
+.todoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.inputError {
+  border-color: #ff0000; /* Красная рамка при ошибке */
+}
+
+.errorMessage {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
 }
