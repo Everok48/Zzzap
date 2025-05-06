@@ -50,7 +50,7 @@ const Todo: React.FC<TodoProps> = ({
         <div className={styles.todoText} onClick={() => setIsEditing(true)}>
           {todo.text}
           <span className={styles.createdAt}>
-            (Создано:{' '}
+            (Создано:
             {todo.createdAt.toLocaleString('ru-RU', {
               day: '2-digit',
               month: '2-digit',
