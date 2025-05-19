@@ -14,7 +14,7 @@ const Clock = () => {
     <div className={styles.header}>
       <div className={styles.timeBlock}>
         <span className={styles.time}>
-          {format(time, 'HH:mm')}
+          {format(time, ' HH: mm')}
           <span className={styles.seconds}>{format(time, ':ss')}</span>
         </span>
         <span className={styles.date}>{format(time, 'dd.MM.yyyy')}</span>
